@@ -42,6 +42,12 @@ structure ray := (vertex : pts) (inside : set pts)
 /--A ray can be defined by explicitly stating the vertex `o` and `a`. -/
 def two_pt_ray (o a : pts) : ray := ⟨o, {x : pts | same_side_pt o a x} ∪ {o}, ⟨a, rfl⟩⟩
 
+/--A flipped ray is defined using between. -/
+def flip_ray (r : ray) : ray :=
+begin
+  sorry,
+end
+
 notation a`-ᵣ`b := two_pt_ray a b
 
 lemma two_pt_ray_vertex (o a : pts) : (o-ᵣa).vertex = o := rfl

@@ -197,4 +197,13 @@ begin
 end
 
 lemma ang_lt_supplementary {α α' β β' : ang} (hαα' : α <ₐ α')
-(hαβ : supplementary α β) (hα'β' : supplementary α' β') : β' <ₐ β := sorry
+(hαβ : supplementary α β) (hα'β' : supplementary α' β') : β' <ₐ β :=
+begin
+  rw supplementary at hαβ, 
+  obtain ⟨⟨a,b,c,d,α,β,hcad⟩,hα,hβ⟩ := hαβ,
+  rw supplementary at hα'β',
+  obtain ⟨⟨a,b',d,c,α',β',hcad'⟩,hα',hβ'⟩ := hα'β',
+  rw ang_lt at hαα',
+  obtain ⟨b',c,a,_,_,_⟩ := hαα',
+  sorry,
+end
